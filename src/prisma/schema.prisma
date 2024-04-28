@@ -1,0 +1,78 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "linux-arm64-openssl-1.1.x", "rhel-openssl-3.0.x"]
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
+  email              String?   @unique
+  emailVerified      DateTime?
+  image              String?
+  uuid               String?
+  university_id      String?
+  type               String?
+  employee_id_number String?
+  specialty          String?
+  login              String?
+  name               String?
+  firstname          String?
+  surname            String?
+  patronymic         String?
+  birth_date         String?
+  phone              String?
+  picture            String?
+  roles              Json
+
+  accounts Account[]
+  sessions Session[]
+  Files    Files[]
+}
+
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Files {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  file   String
+  userId String @db.ObjectId
+  title  String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
