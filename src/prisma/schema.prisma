@@ -35,6 +35,15 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
 model User {
   id                 String    @id @default(auto()) @map("_id") @db.ObjectId
   email              String?   @unique
@@ -58,21 +67,316 @@ model User {
   accounts Account[]
   sessions Session[]
   Files    Files[]
-}
-
-model VerificationToken {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  identifier String
-  token      String   @unique
-  expires    DateTime
-
-  @@unique([identifier, token])
+  Kpi112   Kpi112[]
+  Kpi113   Kpi113[]
+  Kpi121   Kpi121[]
+  Kpi122   Kpi122[]
+  Kpi123   Kpi123[]
+  Kpi131   Kpi131[]
+  Kpi132   Kpi132[]
+  Kpi151   Kpi151[]
+  Kpi152   Kpi152[]
+  Kpi161   Kpi161[]
+  Kpi162   Kpi162[]
+  Kpi211   Kpi211[]
+  Kpi212   Kpi212[]
+  Kpi221   Kpi221[]
+  Kpi231   Kpi231[]
+  Kpi241   Kpi241[]
+  Kpi251   Kpi251[]
+  Kpi31    Kpi31[]
+  Kpi32    Kpi32[]
+  Kpi33    Kpi33[]
+  Kpi34    Kpi34[]
+  Kpi35    Kpi35[]
+  Kpi36    Kpi36[]
+  Kpi411   Kpi411[]
+  Kpi412   Kpi412[]
+  Kpi421   Kpi421[]
+  Kpi422   Kpi422[]
+  Kpi423   Kpi423[]
 }
 
 model Files {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  file   String
-  userId String @db.ObjectId
-  title  String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  file        String
+  fileone     String?
+  userId      String  @db.ObjectId
+  title       String
+  author      String
+  datesuccess String
+  link        String?
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi112 {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  file        String
+  fileone     String?
+  userId      String  @db.ObjectId
+  title       String
+  author      String
+  datesuccess String
+  link        String?
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi113 {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  file        String
+  fileone     String?
+  title       String
+  author      String
+  datesuccess String
+  link        String?
+  userId      String  @db.ObjectId
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi121 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  author      String
+  datesuccess String
+  nomer       String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi122 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  author      String
+  datesuccess String
+  nomer       String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi123 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  author      String
+  datesuccess String
+  nomer       String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi131 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  author      String
+  datesuccess String
+  nomer       String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi132 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  author      String
+  datesuccess String
+  nomer       String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi151 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  place       String
+  datesuccess String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi152 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  title       String
+  place       String
+  datesuccess String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi161 {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  fish       String
+  type       String
+  number     String
+  level      String
+  dateissue  String
+  dateperiod String
+  userId     String @db.ObjectId
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi162 {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  fish       String
+  type       String
+  number     String
+  level      String
+  dateissue  String
+  dateperiod String
+  userId     String @db.ObjectId
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi211 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  title       String
+  datesuccess String
+  author      String
+  link        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi212 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  title       String
+  datesuccess String
+  author      String
+  link        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi221 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  title       String
+  datesuccess String
+  author      String
+  link        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi231 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  typetitle   String
+  title       String
+  datesuccess String
+  author      String
+  link        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi241 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  title       String
+  datesuccess String
+  author      String
+  publisher   String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi251 {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  type       String
+  hindex     String
+  number     String
+  link       String
+  userId     String @db.ObjectId
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi31 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+model Kpi32 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+model Kpi33 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+model Kpi34 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+model Kpi35 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+model Kpi36 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi411 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi412 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi421 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi422 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kpi423 {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  fileone     String
+  userId      String @db.ObjectId
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

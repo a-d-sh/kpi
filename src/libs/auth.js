@@ -48,13 +48,12 @@ export const authOptions = {
           birth_date: profile.birth_date,
           phone: profile.phone,
           picture: profile.picture,
-          roles: profile.roles,
+          roles: profile.roles
         }
       },
       clientId: process.env.HEMIS_CLIENT_ID,
       clientSecret: process.env.HEMIS_CLIENT_SECRET
-    },
-
+    }
 
     // ** ...add more providers here
   ],
@@ -98,6 +97,7 @@ export const authOptions = {
          * in token which then will be available in the `session()` callback
          */
         token.name = user.name
+        token.id = user.id
       }
 
       return token
@@ -106,6 +106,7 @@ export const authOptions = {
       if (session.user) {
         // ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
         session.user.name = token.name
+        session.user.id = token.id
       }
 
       return session

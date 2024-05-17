@@ -17,8 +17,14 @@ const menuItemStyles = (settings, theme) => ({
           [`& .${menuClasses.button}.${menuClasses.active}`]: {
             background:
               theme.direction === 'ltr'
-                ? `linear-gradient(270deg, var(--mui-palette-primary-main), ${lighten(theme.palette.primary.main, 0.5)} 100%)`
-                : `linear-gradient(270deg, ${lighten(theme.palette.primary.main, 0.5)}, var(--mui-palette-primary-main) 100%)`
+                ? `linear-gradient(270deg, var(--mui-palette-primary-main), ${lighten(
+                    theme.palette.primary.main,
+                    0.5
+                  )} 100%)`
+                : `linear-gradient(270deg, ${lighten(
+                    theme.palette.primary.main,
+                    0.5
+                  )}, var(--mui-palette-primary-main) 100%)`
           }
         }
       : {

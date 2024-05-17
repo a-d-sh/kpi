@@ -12,8 +12,7 @@ import '@assets/iconify-icons/generated-icons.css'
 
 export const metadata = {
   title: 'Uzswlu KPI dashboard',
-  description:
-    'O`zbekiston davlat jahon tillari universiteti uchun KPI tizimi!'
+  description: 'O`zbekiston davlat jahon tillari universiteti uchun KPI tizimi!'
 }
 
 const RootLayout = ({ children, params }) => {

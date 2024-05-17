@@ -39,15 +39,7 @@ const data = [
 const Transactions = () => {
   return (
     <Card className='bs-full'>
-      <CardHeader
-        title='Yuklangan ma`lumotlar haqida'
-        // subheader={
-        //   <p className='mbs-3'>
-        //     <span className='font-medium text-textPrimary'>Yuklangan ma'lumotlar soni</span>
-        //     <span className='text-textSecondary'>this month</span>
-        //   </p>
-        // }
-      />
+      <CardHeader title='Yuklangan ma`lumotlar haqida' />
       <CardContent className='!pbs-5'>
         <Grid container spacing={2}>
           {data.map((item, index) => (

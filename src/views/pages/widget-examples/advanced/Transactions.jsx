@@ -91,10 +91,9 @@ const Transactions = () => {
                 <Typography>{item.subtitle}</Typography>
               </div>
               <div className='flex gap-2 items-center'>
-                <Typography
-                  color='text.primary'
-                  className='font-medium'
-                >{`${item.trend === 'up' ? '+' : '-'}$${item.amount}`}</Typography>
+                <Typography color='text.primary' className='font-medium'>{`${item.trend === 'up' ? '+' : '-'}$${
+                  item.amount
+                }`}</Typography>
                 <i
                   className={classnames(
                     item.trend === 'up' ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line',

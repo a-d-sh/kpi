@@ -121,13 +121,14 @@ const Login = ({ mode }) => {
         </div>
         <div className='flex flex-col gap-5 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset]'>
           <div>
-            <Typography variant='h4'>O'zbekiston davlat jahon tillari universiteti</Typography>
+            <Typography variant='h4'>O`zbekiston davlat jahon tillari universiteti</Typography>
             <Typography variant='h4'>KPI tizimiga kirish</Typography>
           </div>
           <Divider className='gap-3'></Divider>
 
           <Button
-            fullWidth variant='contained'
+            fullWidth
+            variant='contained'
             color='success'
             sx={{ '& .MuiButton-startIcon': { marginInlineEnd: 3 } }}
             onClick={() => signIn('hemis')}

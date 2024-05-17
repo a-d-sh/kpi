@@ -22,7 +22,6 @@ const verticalMenuData = (dictionary, params) => [
   //     }
   //   ]
   // },
-
   // This is how you will normally render menu section
   // {
   //   label: dictionary['navigation'].appsPages,

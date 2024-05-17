@@ -27,7 +27,7 @@ const NotFoundRoll = () => {
           <Typography className='font-medium text-8xl' color='text.primary'>
             403
           </Typography>
-          <Typography variant='h4'>Siz ma'lumotlar yuklash uchun rollarga ega emassiz ⚠️</Typography>
+          <Typography variant='h4'>Siz ma`lumotlar yuklash uchun rollarga ega emassiz ⚠️</Typography>
           <Typography variant='h4'>Iltimos admin tasdiqlashini kuting!</Typography>
         </div>
         <img
@@ -36,7 +36,7 @@ const NotFoundRoll = () => {
           className='object-cover bs-[300px] md:bs-[350px] lg:bs-[400px]'
         />
         <Button href='https://t.me/adsh97' component={Link} variant='contained'>
-          Texnik qo'llab quvvatlash uchun murojaat qilish
+          Texnik qo`llab quvvatlash uchun murojaat qilish
         </Button>
       </div>
     </div>

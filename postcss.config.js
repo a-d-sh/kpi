@@ -1,8 +1,8 @@
-"use strict";
+'use strict'
 module.exports = {
-    plugins: {
-        'tailwindcss/nesting': {},
-        tailwindcss: {},
-        autoprefixer: {}
-    }
-};
+  plugins: {
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {}
+  }
+}

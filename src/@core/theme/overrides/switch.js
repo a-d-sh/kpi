@@ -54,7 +54,9 @@ const switchOverrides = {
         opacity: 1,
         borderRadius: 10,
         backgroundColor: 'var(--mui-palette-action-focus)',
-        boxShadow: `0 0 4px rgb(var(--mui-palette-common-${theme.palette.mode === 'light' ? 'onBackgroundChannel' : 'backgroundChannel'}) / 0.16) inset`
+        boxShadow: `0 0 4px rgb(var(--mui-palette-common-${
+          theme.palette.mode === 'light' ? 'onBackgroundChannel' : 'backgroundChannel'
+        }) / 0.16) inset`
       })
     }
   }

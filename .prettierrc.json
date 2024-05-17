@@ -5,13 +5,13 @@
   "insertPragma": false,
   "bracketSameLine": false,
   "jsxSingleQuote": true,
-  "printWidth": 120,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,
-  "semi": false,
+  "useTabs": false,
   "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
   "tabWidth": 2,
-  "trailingComma": "none",
-  "useTabs": false
+  "semi": true
 }

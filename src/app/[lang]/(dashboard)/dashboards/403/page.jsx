@@ -1,9 +1,7 @@
 import NotFoundRoll from '@views/NotFoundRoll'
 
 const Page = () => {
-  return (
-    <NotFoundRoll />
-  )
+  return <NotFoundRoll />
 }
 
 export default Page

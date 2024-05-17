@@ -9,11 +9,11 @@ const Award = () => {
       <CardContent className='flex flex-col gap-2 relative items-start'>
         <div>
           <Typography variant='h5'>Tabriklaymiz! 🎉</Typography>
-          <Typography>To'plagan ballaringiz</Typography>
+          <Typography>To`plagan ballaringiz</Typography>
         </div>
         <div>
           <Typography variant='h4' color='primary'>
-            0  BALL
+            0 BALL
           </Typography>
           <Typography>Marragacha 100%🚀</Typography>
         </div>

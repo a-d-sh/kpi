@@ -374,7 +374,6 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
                       Collapsed
                     </p>
                   </div>
-
                 </div>
               </div>
               <div className='flex flex-col gap-2.5'>

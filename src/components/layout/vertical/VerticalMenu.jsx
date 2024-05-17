@@ -83,52 +83,60 @@ const VerticalMenu = ({ dictionary, scrollMenu }) => {
           </MenuItem>
         </MenuSection>
         <MenuSection label='Jarayon'>
-          <MenuItem href={`/${locale}/dashboards/403`} icon={<i className='ri-edit-circle-line' />}>
+          <MenuItem href={`/${locale}/dashboards/process/checking`} icon={<i className='ri-edit-circle-line' />}>
             Tekshirilayotgan
           </MenuItem>
-          <MenuItem href={`/${locale}/dashboards/403`} icon={<i className='ri-checkbox-circle-line' />}>
+          <MenuItem href={`/${locale}/dashboards/process/success`} icon={<i className='ri-checkbox-circle-line' />}>
             Tasdiqlangan
           </MenuItem>
-          <MenuItem href={`/${locale}/dashboards/403`} icon={<i className='ri-close-circle-line' />}>
+          <MenuItem href={`/${locale}/dashboards/process/rejected`} icon={<i className='ri-close-circle-line' />}>
             Rad etilgan
           </MenuItem>
         </MenuSection>
         <MenuSection label='Yuklanadigan qism'>
           <SubMenu label='O`quv va uslubiy ishlar' icon={<i className='ri-bar-chart-2-line' />}>
-            <MenuItem href={`/${locale}/dashboards/1.1`}>1.1</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.2</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.3</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.4</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.5</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.6</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>1.7</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.1.1`}>1.1.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.1.2`}>1.1.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.1.3`}>1.1.3</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.2.1`}>1.2.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.2.2`}>1.2.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.2.3`}>1.2.3</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.3.1`}>1.3.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.3.2`}>1.3.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.5.1`}>1.5.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.5.2`}>1.5.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.6.1`}>1.6.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/1.6.2`}>1.6.2</MenuItem>
           </SubMenu>
           <SubMenu label='Ilmiy va innovatsiyalarga oid ishlar' icon={<i className='ri-bar-chart-2-line' />}>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.1</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.2</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.3</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.4</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.5</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.6</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.7</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.8</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.9</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.10</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.11</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>2.12</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.1.1`}>2.1.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.1.2`}>2.1.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.2.1`}>2.2.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.3.1`}>2.3.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.4.1`}>2.4.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.5.1`}>2.5.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.6.1`}>2.6.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.7.1`}>2.7.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.8.1`}>2.8.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.9.1`}>2.9.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.10.1`}>2.10.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.11.1`}>2.11.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/2.12.1`}>2.12.1</MenuItem>
           </SubMenu>
           <SubMenu label='Xalqaro hamkorlikka oid ishlar' icon={<i className='ri-bar-chart-2-line' />}>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.1</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.2</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.3</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.4</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.5</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>3.6</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.1`}>3.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.2`}>3.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.3`}>3.3</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.4`}>3.4</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.5`}>3.5</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/3.6`}>3.6</MenuItem>
           </SubMenu>
           <SubMenu label='Ma`naviy-ma`rifiy ishlar' icon={<i className='ri-bar-chart-2-line' />}>
-            <MenuItem href={`/${locale}/dashboards/403`}>4.1</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>4.2</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/403`}>4.3</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/4.1.1`}>4.1.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/4.1.2`}>4.1.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/4.2.1`}>4.2.1</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/4.2.2`}>4.2.2</MenuItem>
+            <MenuItem href={`/${locale}/dashboards/4.2.3`}>4.2.3</MenuItem>
           </SubMenu>
         </MenuSection>
       </Menu>

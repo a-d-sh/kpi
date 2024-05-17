@@ -1,11 +1,8 @@
-// MUI Imports
+//Qoidalar uchun page
 import Link from '@components/Link'
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-// import FormValidation11 from '@views/forms/form-kpi/FormValidation11'
-
-// Components Imports
 
 const kpirules = () => {
   return (
@@ -17,6 +14,11 @@ const kpirules = () => {
         </Typography>
       </Grid>
       <Grid item xs={6} sx={{ paddingBottom: 4 }}>
+        <Card className='m-2 py-5 pl-10'>
+          <Link href={"https://uzswlu.uz/backend/web/files/KPI/KPI_O'quv uslubiy ishlar.pdf"} target='_blank'>
+            O`quv uslubiy ishlar
+          </Link>
+        </Card>
         <Card className='m-2 py-5 pl-10'>
           <Link
             href={'https://uzswlu.uz/backend/web/files/KPI/KPI_Ilmiy%20va%20innovatsiyalarga%20oid%20ishlar.pdf'}
@@ -31,19 +33,11 @@ const kpirules = () => {
           </Link>
         </Card>
         <Card className='m-2 py-5 pl-10'>
-          <Link href={"https://uzswlu.uz/backend/web/files/KPI/KPI_O'quv uslubiy ishlar.pdf"} target='_blank'>
-            O'quv uslubiy ishlar
-          </Link>
-        </Card>
-        <Card className='m-2 py-5 pl-10'>
           <Link href={"https://uzswlu.uz/backend/web/files/KPI/KPI_Ma'naviy ma'rifiy ishlar.pdf"} target='_blank'>
-            Ma'naviy ma'rifiy ishlar
+            Ma`naviy ma`rifiy ishlar
           </Link>
         </Card>
       </Grid>
-      {/* <Grid item xs={12}>
-        <FormValidation11 />
-      </Grid> */}
     </Grid>
   )
 }
