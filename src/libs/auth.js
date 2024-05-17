@@ -1,20 +1,14 @@
 // Third-party Imports
-import { PrismaAdapter } from '@auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
 
   // ** Configure one or more authentication providers
-  //   // ** Please refer to https://next-auth.js.org/configuration/options#providers for more `providers` options
-  //   CLIENT_SECRET=P3a6cmxlmxSzkNe3BqCyXG3de87C9Bx7kkH8kiY2
-  // CLIENT_ID=3
-  // REDIRECT_URI=http://localhost:3000/api/auth/callback/hemis
-  // AUTHORIZE_URL=https://hemis.uzswlu.uz/oauth/authorize
-  // TOKEN_URL=https://hemis.uzswlu.uz/oauth/access-token
-  // RESOURCE_OWNER_URL=https://hemis.uzswlu.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone,specialty
+
   providers: [
     {
       id: 'hemis',
@@ -22,7 +16,7 @@ export const authOptions = {
       type: 'oauth',
       authorization: {
         url: 'https://hemis.uzswlu.uz/oauth/authorize',
-        params: { scope: '' }
+        params: { scope: '' },
       },
       token: 'https://hemis.uzswlu.uz/oauth/access-token',
       userinfo:
@@ -48,12 +42,12 @@ export const authOptions = {
           birth_date: profile.birth_date,
           phone: profile.phone,
           picture: profile.picture,
-          roles: profile.roles
-        }
+          roles: profile.roles,
+        };
       },
       clientId: process.env.HEMIS_CLIENT_ID,
-      clientSecret: process.env.HEMIS_CLIENT_SECRET
-    }
+      clientSecret: process.env.HEMIS_CLIENT_SECRET,
+    },
 
     // ** ...add more providers here
   ],
@@ -73,12 +67,12 @@ export const authOptions = {
     strategy: 'jwt',
 
     // ** Seconds - How long until an idle session expires and is no longer valid
-    maxAge: 30 * 24 * 60 * 60 // ** 30 days
+    maxAge: 30 * 24 * 60 * 60, // ** 30 days
   },
 
   // ** Please refer to https://next-auth.js.org/configuration/options#pages for more `pages` options
   pages: {
-    signIn: '/login'
+    signIn: '/login',
   },
 
   // ** Please refer to https://next-auth.js.org/configuration/options#callbacks for more `callbacks` options
@@ -96,20 +90,24 @@ export const authOptions = {
          * For adding custom parameters to user in session, we first need to add those parameters
          * in token which then will be available in the `session()` callback
          */
-        token.name = user.name
-        token.id = user.id
+        token.name = user.name;
+        token.id = user.id;
       }
 
-      return token
+      return token;
     },
     async session({ session, token }) {
       if (session.user) {
+        const basePath = process.env.BASEPATH || '';
+        session.user.basePath = basePath;
         // ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
-        session.user.name = token.name
-        session.user.id = token.id
+        session.user.name = token.name;
+        session.user.id = token.id;
+
+        // return session;
       }
 
-      return session
-    }
-  }
-}
+      return session;
+    },
+  },
+};

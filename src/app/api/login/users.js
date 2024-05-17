@@ -3,9 +3,9 @@
 export const users = [
   {
     id: 1,
-    name: 'John Doe',
+    name: 'Abduvoxidov Davlatbek',
     password: 'admin',
     email: 'admin@hemis.com',
-    image: '/images/avatars/1.png'
-  }
-]
+    image: '/images/avatars/1.png',
+  },
+];
